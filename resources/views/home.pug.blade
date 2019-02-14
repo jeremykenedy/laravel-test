@@ -1,0 +1,34 @@
+@extends('layouts.app')
+
+@section('content')
+.container
+    .row.justify-content-center
+        .col-12
+            .card
+                .card-header Dashboard
+                .card-body
+                    @if (session('status'))
+                        .alert.alert-success(role="alert").
+                            {{ session('status') }}
+                    @endif
+                    p You are logged in!
+                    .row.justify-content-center
+                        .col-12.col-md-6.col-lg-4
+                            a.dashboard-icon(href="/analytics")
+                                span Analytics Testing
+                        .col-12.col-md-6.col-lg-4
+                            a.dashboard-icon(href="/tools")
+                                span Marketing Tools
+                        .col-12.col-md-6.col-lg-4
+                            a.dashboard-icon(href="/files")
+                                span File Upload
+                        .col-12.col-md-6.col-lg-4
+                            a.dashboard-icon(href="/proposal")
+                                span Digital Proposal
+                        .col-12.col-md-6.col-lg-4
+                            a.dashboard-icon(href="/support")
+                                span Support Ticket
+                        .col-12.col-md-6.col-lg-4
+                            a.dashboard-icon(href="/billing")
+                                span Billing
+@endsection
